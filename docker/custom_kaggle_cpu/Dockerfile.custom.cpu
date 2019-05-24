@@ -1,5 +1,5 @@
 # Build new image from existing images
-FROM gcr.io/kaggle-images/python
+FROM my-kaggle-images/python
 
 # Install libraries in requirements.txt
 COPY requirements.txt /tmp

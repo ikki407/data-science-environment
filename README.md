@@ -35,7 +35,7 @@ Image building takes long time (kaggle image include a lot of libraries!!), so h
 GPU image is still not provided, build it with [below commands](#Docker-build-from-source-codes).
 
 
-### Build your own custom docker
+### Build your own custom docker from base image
 
 For specific tasks, you can add/remove any libraries, files, and data though updating the `Dockerfile.custom.*`.
 ```shell
