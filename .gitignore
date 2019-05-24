@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.DS_Store
+*.py[cod]
+*.pyc
+*.gz
+.python-version
+upload_gcp.sh
+*.png
+*.csv
+*.pdf
+*.pkl
+*.sw[op]
