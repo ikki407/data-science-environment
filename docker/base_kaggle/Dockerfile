@@ -3,4 +3,4 @@ FROM gcr.io/kaggle-images/python:v56
 
 # Install useful libraries
 RUN pip install -U pip && \
-    pip install fastprogress japanize-matplotlib
+    pip install japanize-matplotlib
