@@ -68,10 +68,15 @@ kjupyter() {
 
 You can get latest details in [github](https://github.com/Kaggle/docker-python).
 
-### Git clone
+### Submodule update
 
+First building, submodule initialization is necessary.
 ```shell
-git clone https://github.com/Kaggle/docker-python.git
+git submodule update --init
+```
+Move directory to Kaggle/docker-python.
+```shell
+cd submodule/docker-python/
 ```
 
 
@@ -79,12 +84,12 @@ git clone https://github.com/Kaggle/docker-python.git
 
 For CPU
 ```shell
-./build --use-cache
+./build --use-cache  # IMAGE TAG = kaggle/python-build
 ```
 
 For GPU
 ```shell
-./build --gpu --use-cache
+./build --gpu --use-cache  # IMAGE TAG = kaggle/python-gpu-build
 ```
 
 This build takes long time, have a cup of coffee or sleep.
@@ -93,7 +98,7 @@ This build takes long time, have a cup of coffee or sleep.
 ### Test
 
 ```shell
-./build  # --gpu
+./test  # --gpu
 ```
 
 
