@@ -4,7 +4,14 @@ Goal: easy environment for data science task.
 
 ## Build custom docker via gcr.io/kaggle-images/python
 
+
+## Requirements
+
+- Docker
+- [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) (optional for GPU)
+
 ## How to use
+
 
 First, [build docker](#Docker-build). After build completed, run containers.
 ```shell
@@ -16,12 +23,12 @@ Interactively run commands in bash.
 docker run -v $PWD:/tmp/working -w=/tmp/working --rm -it my-kaggle-images/python-custom /bin/bash
 ```
 
-If you put [these useful command](#Tips), the following run:
+
+If you build GPU images, use this command:
 ```shell
-kpython   # python on Docker (my-kaggle-images/python)
-ikpython  # ipython on Docker (my-kaggle-images/python)
-kjupyter  # jupyter on Docker (my-kaggle-images/python)
+docker run -v $PWD:/tmp/working -w=/tmp/working --rm -it --runtime=nvidia my-kaggle-images/python-gpu-build-custom /bin/bash
 ```
+
 
 ## Docker build
 
@@ -44,12 +51,12 @@ docker build -t my-kaggle-images/python-custom -f docker/custom_kaggle_cpu/Docke
 ```
 ```shell
 # GPU
-docker build -t kaggle/python-gpu-build-custom -f docker/custom_kaggle_gpu/Dockerfile.custom.gpu .
+docker build -t my-kaggle-images/python-gpu-build-custom -f docker/custom_kaggle_gpu/Dockerfile.custom.gpu .
 ```
 
 ### Tips
 
-Put these lines in your `.bashrc` file.
+Put these lines in your `.bashrc` file for useful command.
 ```
 kpython(){
   docker run -v $PWD:/tmp/working -w=/tmp/working --rm -it my-kaggle-images/python python "$@"  
@@ -60,6 +67,13 @@ ikpython() {
 kjupyter() {
   docker run -v $PWD:/tmp/working -w=/tmp/working -p 8888:8888 --rm -it my-kaggle-images/python jupyter notebook --no-browser --ip="0.0.0.0" --notebook-dir=/tmp/working --allow-root
 }
+```
+
+Then, run the following commands:
+```shell
+kpython   # python on Docker (my-kaggle-images/python)
+ikpython  # ipython on Docker (my-kaggle-images/python)
+kjupyter  # jupyter on Docker (my-kaggle-images/python)
 ```
 
 
@@ -126,15 +140,4 @@ To ensure your container can access the GPU, follow the instructions posted [her
 If you don't have the nvidia-docker, install the latest nvidia-docker [here](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)).
 
 
-### Build your own custom docker
-
-Run below code in top directory.
-```shell
-# CPU
-docker build -t kaggle/python-build-custom -f Dockerfile.build.custom.cpu .
-```
-```shell
-# GPU
-docker build -t kaggle/python-gpu-build-custom -f Dockerfile.build.custom.gpu .
-```
 </div></details>
