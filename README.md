@@ -80,6 +80,10 @@ cd submodule/docker-python/
 ```
 
 
+NOTE: we are using Kaggle/docker-gpu-python image of CUDA 9.2 version (commit hash: [a6ba32e](https://github.com/Kaggle/docker-python/commit/a6ba32e0bb017a30e079cf8bccab613cd4243a5f))  
+If you want to use CUDA 10.0 or 10.1+, checkout the latest commit.
+
+
 ### Build
 
 For CPU
@@ -112,8 +116,11 @@ docker run --rm -it kaggle/python-build /bin/bash
 
 For GPU
 ```shell
-# Run the image built locally:
+# Run the image built locally (nvidia-docker2)
 docker run --runtime nvidia --rm -it kaggle/python-gpu-build /bin/bash
+
+# If you use old nvidia-docker, run following command
+# nvidia-docker run --rm -it kaggle/python-gpu-build /bin/bash
 ```
 To ensure your container can access the GPU, follow the instructions posted [here](https://github.com/Kaggle/docker-python/issues/361#issuecomment-448093930).
 If you don't have the nvidia-docker, install the latest nvidia-docker [here](https://github.com/NVIDIA/nvidia-docker/wiki/Installation-(version-2.0)).
