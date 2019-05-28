@@ -1,4 +1,4 @@
-Goal: easy environment for data science task.
+Goal: easy docker environment for data science task.
 
 
 
@@ -7,8 +7,21 @@ Goal: easy environment for data science task.
 
 ## Requirements
 
+This repositry is available on the following settings.
+
+#### OS
+- MacOS: CPU only
+- Ubuntu 16.04: CPU/GPU
+    - Other versions are not tested: 14.04/18.04, Debian Jessie/Stretch
+
+#### Library
 - Docker
 - [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) (optional for GPU)
+
+#### Nvidia GPU
+- CUDA 9.2 (NOTE: we are now using Kaggle/docker-gpu-python image of CUDA 9.2 version (commit hash: [a6ba32e](https://github.com/Kaggle/docker-python/commit/a6ba32e0bb017a30e079cf8bccab613cd4243a5f)))
+- Driver Version: 396.26
+
 
 ## How to use
 
