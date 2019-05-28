@@ -4,8 +4,6 @@ __pycache__/
 *.py[cod]
 *.pyc
 *.gz
-.python-version
-upload_gcp.sh
 *.png
 *.csv
 *.pdf
