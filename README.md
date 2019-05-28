@@ -12,7 +12,7 @@ This repositry is available on the following settings.
 #### OS
 - MacOS: CPU only
 - Ubuntu 16.04: CPU/GPU
-    - Other versions are not tested: 14.04/18.04, Debian Jessie/Stretch
+    - Other versions are not tested yet: 14.04/18.04, Debian Jessie/Stretch
 
 #### Library
 - Docker
@@ -46,16 +46,17 @@ docker run -v $PWD:/tmp/working -w=/tmp/working --rm -it --runtime=nvidia my-kag
 ## Docker build
 
 
-### Build base image
+### Build base kaggle image
 
 ```shell
+# CPU
 docker build -t my-kaggle-images/python -f docker/base_kaggle/Dockerfile .
 ```
 Image building takes long time (kaggle image include a lot of libraries!!), so have a coffee :coffee:.  
-GPU image is still not provided, build it with [below commands](#Docker-build-from-source-codes).
+**GPU image is still not provided, build it from [below source codes](#Docker-build-from-source-codes).**
 
 
-### Build your own custom docker from base image
+### Build your own custom images from base image
 
 For specific tasks, you can add/remove any libraries, files, and data though updating the `Dockerfile.custom.*`.
 ```shell
