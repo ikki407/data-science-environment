@@ -2,7 +2,7 @@ Goal: easy docker environment for data science task.
 
 
 
-## Build custom docker via gcr.io/kaggle-images/python
+## Build custom docker from gcr.io/kaggle-images/python
 
 
 ## Requirements
