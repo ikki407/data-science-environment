@@ -1,3 +1,3 @@
 [submodule "submodule/docker-python"]
 	path = submodule/docker-python
-	url = git@github.com:Kaggle/docker-python.git
+	url = https://github.com/ikki407/data-science-environment.git
